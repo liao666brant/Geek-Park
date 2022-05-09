@@ -1,12 +1,14 @@
-import React from 'react';
-import { Card, Form, Input, Checkbox, Button, message } from 'antd';
-// import { useNavigate } from 'react-router-dom';
-
-import logo from '@/assets/logo.png';
 import './index.scss';
-import { rule } from './rules';
-import { useStore } from '@/store';
+
+import { Button, Card, Checkbox, Form, Input, message } from 'antd';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
+// import { useNavigate } from 'react-router-dom';
+import logo from '@/assets/logo.png';
+import { useStore } from '@/store';
+
+import { rule } from './rules';
 
 export default function Login() {
   const { loginStore } = useStore();

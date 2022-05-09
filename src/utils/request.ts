@@ -2,6 +2,7 @@
 // 实例化  请求拦截器 响应拦截器
 
 import axios, { type AxiosInstance } from 'axios';
+
 import { getToken } from './token';
 // import { history } from './history'
 const request: AxiosInstance = axios.create({
