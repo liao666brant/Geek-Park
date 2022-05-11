@@ -5,8 +5,14 @@ import AuthComponent from '@/components/AuthComponent';
 
 // 懒加载组件
 const Layouts = lazy(() => import('@/layout'));
-const Home = lazy(() => import('@/pages/Home'));
 const Login = lazy(() => import('@/pages/Login'));
+// const Home = lazy(() => import('@/pages/Home'));
+// const Article = lazy(() => import('@/pages/Article'));
+// const Publish = lazy(() => import('@/pages/Publish'));
+
+import Article from '@/pages/Article';
+import Home from '@/pages/Home';
+import Publish from '@/pages/Publish';
 
 const routes = [
   {
@@ -16,8 +22,12 @@ const routes = [
         <Layouts />
       </AuthComponent>
     ),
+    children: [
+      { index: true, element: <Home /> },
+      { path: '/article', element: <Article /> },
+      { path: '/publish', element: <Publish /> },
+    ],
   },
-  { path: '/home', element: <Home /> },
   { path: '/login', element: <Login /> },
 ];
 

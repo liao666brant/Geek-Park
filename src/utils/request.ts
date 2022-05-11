@@ -3,8 +3,9 @@
 
 import axios, { type AxiosInstance } from 'axios';
 
+import { history } from './history';
 import { getToken } from './token';
-// import { history } from './history'
+
 const request: AxiosInstance = axios.create({
   baseURL: 'http://geek.itheima.net/v1_0',
   timeout: 5000,
@@ -39,7 +40,7 @@ request.interceptors.response.use(
       // 跳回到登录 reactRouter默认状态下 并不支持在组件之外完成路由跳转
       // 需要自己来实现
       console.log('login');
-      // history.push('/login');
+      history.push('/login');
     }
     return Promise.reject(error);
   },

@@ -1,15 +1,17 @@
+import './App.scss';
+
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
 import RouterView from '@/router';
+import { history, HistoryRouter } from '@/utils/history';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HistoryRouter history={history}>
       <div className="App">
         <RouterView />
       </div>
-    </BrowserRouter>
+    </HistoryRouter>
   );
 }
 
