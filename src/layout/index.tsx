@@ -13,11 +13,13 @@ import MenuRC from './MenuRC';
 const { Header, Sider } = Layout;
 
 function LayoutComponent() {
-  const { userStore, loginStore } = useStore();
+  const { userStore, loginStore, channelStore } = useStore();
 
+  // 发起请求存储全局数据
   useEffect(() => {
     userStore.getUserInfo();
-  }, [userStore]);
+    channelStore.loadChannelList();
+  }, [userStore, channelStore]);
 
   /**
    * 确认退出

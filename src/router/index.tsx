@@ -6,13 +6,13 @@ import AuthComponent from '@/components/AuthComponent';
 // 懒加载组件
 const Layouts = lazy(() => import('@/layout'));
 const Login = lazy(() => import('@/pages/Login'));
-// const Home = lazy(() => import('@/pages/Home'));
-// const Article = lazy(() => import('@/pages/Article'));
-// const Publish = lazy(() => import('@/pages/Publish'));
+const Home = lazy(() => import('@/pages/Home'));
+const Article = lazy(() => import('@/pages/Article'));
+const Publish = lazy(() => import('@/pages/Publish'));
 
-import Article from '@/pages/Article';
-import Home from '@/pages/Home';
-import Publish from '@/pages/Publish';
+// import Article from '@/pages/Article';
+// import Home from '@/pages/Home';
+// import Publish from '@/pages/Publish';
 
 const routes = [
   {

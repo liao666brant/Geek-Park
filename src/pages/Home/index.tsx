@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import MyChart from '@/components/MyChart';
+
+const Test = () => {
+  const [state, setState] = useState({
+    name: 'Tom',
+    age: 17,
+  });
+
+  console.log(state);
+
+  useEffect(() => {
+    setState((value) => ({
+      ...value,
+      age: value.age + 1,
+    }));
+  }, []);
+
+  return <div>{state.age}</div>;
+};
 
 export default function Home() {
   return (
     <div className="home">
+      <Test />
       <MyChart
         style={{ width: '500px', height: '400px' }}
         xData={['vue', 'angular', 'react']}
