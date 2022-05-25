@@ -1,14 +1,15 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { useRoutes } from 'react-router-dom';
 
 import AuthComponent from '@/components/AuthComponent';
+import LazyRouterComponent from '@/router/LazyRouterComponent';
 
 // 懒加载组件
-const Layouts = lazy(() => import('@/layout'));
-const Login = lazy(() => import('@/pages/Login'));
-const Home = lazy(() => import('@/pages/Home'));
-const Article = lazy(() => import('@/pages/Article'));
-const Publish = lazy(() => import('@/pages/Publish'));
+const Layouts = LazyRouterComponent(() => import('@/layout'));
+const Login = LazyRouterComponent(() => import('@/pages/Login'));
+const Home = LazyRouterComponent(() => import('@/pages/Home'));
+const Article = LazyRouterComponent(() => import('@/pages/Article'));
+const Publish = LazyRouterComponent(() => import('@/pages/Publish'));
 
 // import Article from '@/pages/Article';
 // import Home from '@/pages/Home';
@@ -33,22 +34,7 @@ const routes = [
 
 const RouterView = () => {
   const element = useRoutes(routes);
-  return (
-    <Suspense
-      fallback={
-        <div
-          style={{
-            textAlign: 'center',
-            marginTop: 200,
-          }}
-        >
-          loading...
-        </div>
-      }
-    >
-      {element}
-    </Suspense>
-  );
+  return element;
 };
 
 export default RouterView;
